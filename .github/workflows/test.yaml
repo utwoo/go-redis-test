@@ -24,7 +24,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Run Test
-        run: go test -race ./...
+        run: CGO_ENABLED=0 go test -race ./...
         env:
           REDIS_ADDRESS: "redis:6379"
           REDIS_PASSWORD: ""
